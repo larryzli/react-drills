@@ -17,15 +17,15 @@ class App extends Component {
     });
   }
   render() {
-    const { dataArr } = this.state;
+    let filteredFoods = this.state.dataArr.map((val, i) => {
+      if (val.includes(this.state.userInput)) {
+        return <h2 key={i}>{val}</h2>;
+      }
+    });
     return (
       <div className="App">
         <input onChange={e => this.updateInput(e.target.value)} type="text" />
-        {dataArr.map((val, i) => {
-          if (val.includes(this.state.userInput)) {
-            return <h2 key={i}>{val}</h2>;
-          }
-        })}
+        {filteredFoods}
       </div>
     );
   }
