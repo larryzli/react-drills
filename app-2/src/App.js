@@ -12,7 +12,11 @@ class App extends Component {
   }
   render() {
     const { dataArr } = this.state;
-    return <div className="App">{dataArr.map(val => <h2>{val}</h2>)}</div>;
+    return (
+      <div className="App">
+        {dataArr.map((val, i) => <h2 key={i}>{val}</h2>)}
+      </div>
+    );
   }
 }
 
