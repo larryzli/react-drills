@@ -28,6 +28,7 @@ class App extends Component {
   }
   render() {
     let listTasks = this.state.tasks.map((task, key) => {
+      console.log(key);
       return <Todo task={task} key={key} />;
     });
     return (
